@@ -1,0 +1,15 @@
+body {
+  background-image: url("./bamboo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+div.somen.block {
+  background-image: url("./somen.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  margin: auto;
+  width: 10%;
+  height: 100%;
+}

@@ -6,7 +6,35 @@
     <title>流しそうめん</title>
   </head>
   <body>
-    <div class="somen block"/>
+    <div id="somen" style="top: 0%;"/>
+    <script>
+      (function() {
+        const somen = document.getElementById("somen");
+        let accel = 0;
+        window.addEventListener("deviceorientation", function(e) {
+          let beta;
+          if(e.beta > 90) {
+            beta = 180 - e.beta;
+          } else if(e.beta < -90) {
+            beta = - 180 - e.beta);
+          } else {
+            beta = e.beta;
+          }
+
+          accel = e.beta * 0.01;
+        });
+      setInterval(function() {
+        let top = parseFloat(somen.style.top);
+        top += accel;
+        if(top < - 150) {
+          top = 150;
+        } else if(top > 150) {
+          top = -150;
+        }
+        somen.style.top = top + "%";
+      }, 0);
+      })();
+    </script>
   </body>
 </html>
 

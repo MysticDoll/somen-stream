@@ -9,10 +9,10 @@
     <div id="somen" style="top: 0%;"/>
     <script>
       (function() {
-        const somen = document.getElementById("somen");
-        let accel = 0;
+        var somen = document.getElementById("somen");
+        var accel = 0;
         window.addEventListener("deviceorientation", function(e) {
-          let beta;
+          var beta;
           if(e.beta > 90) {
             beta = 180 - e.beta;
           } else if(e.beta < -90) {
@@ -24,7 +24,7 @@
           accel = beta * 0.01;
         });
       setInterval(function() {
-        let top = parseFloat(somen.style.top);
+        var top = parseFloat(somen.style.top);
         top += accel;
         if(top < - 150) {
           top = 150;
